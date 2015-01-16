@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ {{template "header"}}
+  <title> 登录 - 我的beego 博客</title>  
+  </head>
+	
+	<body>
+		<div class="container" style="width:500px">
+			<form role="form" method="POST" action="/login">
+			  <div class="form-group">
+			    <label>Account</label>
+			    <input  id="uname" class="form-control" placeholder="Enter account" name="uname">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Password</label>
+			    <input id="pwd" type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			  </div>
+
+			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox" name="autoLogin"> 自动登录
+			    </label>
+			  </div>
+			  <button type="submit" class="btn btn-default"  onclick="return checkInput();">登录</button>
+			  <button type="submit" class="btn btn-default"  onclick="return backToHome();">返回</button>
+			</form>
+
+			<script type="text/javascript">
+				function checkInput() {
+					var uname = document.getElementById("uname")
+					if (uname.value.length == 0) {
+						alert("please input account");
+						return false
+					}
+
+					var pwd = document.getElementById("pwd")
+					if (pwd.value.length == 0) {
+						alert("please input password");
+						return false
+					}
+					return true
+				}
+
+				function backToHome() {
+					window.location.href = "/"
+					return false;
+				}
+			</script>
+		</div>
+	</body>
+</html>
