@@ -27,7 +27,7 @@ func main() {
 
 	// create attachment dir
 	os.Mkdir("attachment", os.ModePerm)
-	beego.Router("/attachment/:all", &controllers.AttachmentController, "p")
+	//beego.Router("/attachment/:all", &controllers.AttachmentController{}, "p")
 
 	beego.Run()
 }
